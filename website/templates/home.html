@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+    %}
+    <title>Recipes Stats</title>
+<link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+<h1>Glucose Solutions</h1>
+<input type="text" id="searchInput" placeholder="Glucose">
+<button id="searchButton">Search</button>
+<div id="resultsContainer"></div>
+<script src="../static/script.js"></script>
+</body>
+</html>
+
+    <ul class="list-group list-group-flush" id="notes">
+      {% for note in user.notes %}
+      <li class="list-group-item">
+        {{ note.data }}
+        <!-- <button type="button" class="close" onClick="deleteNote({{ note.id }})"> -->
+          <span aria-hidden="true">&times;</span> 
+        </button>
+      </li>
+      {% endfor %}
+    {% endblock %}
